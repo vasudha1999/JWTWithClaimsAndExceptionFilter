@@ -24,10 +24,14 @@ namespace JWTExample.Controllers
 		//[ExceptioResultFilter]
 		public IActionResult Index()
 		{
-			throw new DivideByZeroException();
+			int[] a = { 1, 2, 3 };
+			int index = 3;
+			if (index >= a.Length)
+				throw new IndexOutOfRangeException();
+			else
+				return Content(a[index].ToString());
+			
 		}
-		
-
 		[HttpGet]
 		[Authorize]
 		public ActionResult<IEnumerable<string>> get()
