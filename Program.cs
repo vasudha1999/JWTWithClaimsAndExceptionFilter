@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(options =>
 {
 	// Adding custom exception filter globally
-	//options.Filters.Add(new ExceptioResultFilter());
+	options.Filters.Add(new ExceptioResultFilter());
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
